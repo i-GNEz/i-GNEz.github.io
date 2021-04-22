@@ -1,4 +1,4 @@
-## This is Api Guide For Registeration Form (Non Group event)
+## This is Api Guide For Registeration Form (Solo event)
 
 The Api will accept the url encoded data only, Following is the list of parameters which are required during the api call along with the validations which are made on each parameter, if any parameter will not match the validation criteria then api will send the error message in response 
 
@@ -9,7 +9,8 @@ The Api will accept the url encoded data only, Following is the list of paramete
 5. college :- max of 100 characters
 6. college_city :- max 100 characters
 7. college_roll_no :- string with max 100 characters
-8. event_name :- max 100 characters and should be exactly same as provided in list
+8. event_name :- max 100 characters and should be exactly same as provided in list(don't ask from user set it as hidden field and it's value should be exactly same as provided by the backend team)
+9. team_name :- This would be the email id only don't ask this from user set this as a hidden field and it's value will be email id only
 
 The api on post request will return a json {'message':'corresponding message'}
 
