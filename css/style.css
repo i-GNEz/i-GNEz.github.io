@@ -11,28 +11,6 @@
     color: #101010;
 }
 
-.underLine {
-    overflow: hidden;
-    text-align: center;
-  }
-  
- .underLine:before,
- .underLine:after {
-    background-color: #FFC100;
-    content: "";
-    display: inline-block;
-    height: 5px;
-    position: relative;
-    vertical-align: middle;
-    width: 50%;
-    border-radius: 15%;
-  }
-  
- .underLine:before {
-    right: 0.5em;
-    margin-left: -50%;
-  }
-
 html,
 body {
     height: 100%;
