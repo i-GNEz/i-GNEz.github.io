@@ -36,37 +36,213 @@ document.getElementById('nav-toggle').onclick = function () {
     document.getElementById("nav-content").classList.toggle("hidden");
 }
 
-var events = ["Workshop", "Code Relay", "Hackathon", "Electrohack"];
-var departments = ["Mechanical Engineering", "Computer Science Engineering", "Computer Science Engineering", "Electronics Engineering"];
-var totalLayout = 4
-
-function createSlide() {
-    var e = document.getElementById("slidesDiv");
-    for (var t = 1; t <= totalLayout; t++) {
-        var a = document.createElement("div");
-        a.setAttribute("class", "mySlides hidden"), e.appendChild(a);
-        var n = document.createElement("img");
-        n.setAttribute("src", "images/" + t + ".png"), n.setAttribute("class", "description w-full object-cover"), n.setAttribute("alt", "Event" + t), n.setAttribute("onclick", "currentSlide(" + t + ")"), a.appendChild(n)
+function WordShuffler(holder,opt){
+    var that = this;
+    var time = 0;
+    this.now;
+    this.then = Date.now();
+    
+    this.delta;
+    this.currentTimeOffset = 0;
+    
+    this.word = null;
+    this.currentWord = null;
+    this.currentCharacter = 0;
+    this.currentWordLength = 0;
+  
+  
+    var options = {
+      fps : 20,
+      timeOffset : 5,
+      textColor : '#000',
+      fontSize : "50px",
+      useCanvas : false,
+      mixCapital : false,
+      mixSpecialCharacters : false,
+      needUpdate : true,
+      colors : [
+        '#fff','#FFC100'
+      ]
     }
-}
-createSlide();
-var slideIndex = 1;
+  
+    if(typeof opt != "undefined"){
+      for(key in opt){
+        options[key] = opt[key];
+      }
+    }
+  
+  
+    
+    this.needUpdate = true;
+    this.fps = options.fps;
+    this.interval = 1000/this.fps;
+    this.timeOffset = options.timeOffset;
+    this.textColor = options.textColor;
+    this.fontSize = options.fontSize;
+    this.mixCapital = options.mixCapital;
+    this.mixSpecialCharacters = options.mixSpecialCharacters;
+    this.colors = options.colors;
+  
+     this.useCanvas = options.useCanvas;
+    
+    this.chars = [
+      'A','B','C','D',
+      'E','F','G','H',
+      'I','J','K','L',
+      'M','N','O','P',
+      'Q','R','S','T',
+      'U','V','W','X',
+      'Y','Z'
+    ];
+    this.specialCharacters = [
+      '!','§','$','%',
+      '&','/','(',')',
+      '=','?','_','<',
+      '>','^','°','*',
+      '#','-',':',';','~'
+    ]
+  
+    if(this.mixSpecialCharacters){
+      this.chars = this.chars.concat(this.specialCharacters);
+    }
+  
+    this.getRandomColor = function () {
+      var randNum = Math.floor( Math.random() * this.colors.length );
+      return this.colors[randNum];
+    }
+  
+    //if Canvas
+   
+    this.position = {
+      x : 0,
+      y : 50
+    }
+  
+    //if DOM
+    if(typeof holder != "undefined"){
+      this.holder = holder;
+    }
+  
+    if(!this.useCanvas && typeof this.holder == "undefined"){
+      console.warn('Holder must be defined in DOM Mode. Use Canvas or define Holder');
+    }
+  
+  
+    this.getRandCharacter = function(characterToReplace){    
+      if(characterToReplace == " "){
+        return ' ';
+      }
+      var randNum = Math.floor(Math.random() * this.chars.length);
+      var lowChoice =  -.5 + Math.random();
+      var picketCharacter = this.chars[randNum];
+      var choosen = picketCharacter.toLowerCase();
+      if(this.mixCapital){
+        choosen = lowChoice < 0 ? picketCharacter.toLowerCase() : picketCharacter;
+      }
+      return choosen;
+      
+    }
+  
+    this.writeWord = function(word){
+      this.word = word;
+      this.currentWord = word.split('');
+      this.currentWordLength = this.currentWord.length;
+  
+    }
+  
+    this.generateSingleCharacter = function (color,character) {
+      var span = document.createElement('span');
+      span.style.color = color;
+      span.innerHTML = character;
+      return span;
+    }
+  
+    this.updateCharacter = function (time) {
+      
+        this.now = Date.now();
+        this.delta = this.now - this.then;
+  
+         
+  
+        if (this.delta > this.interval) {
+          this.currentTimeOffset++;
+        
+          var word = [];
+  
+          if(this.currentTimeOffset === this.timeOffset && this.currentCharacter !== this.currentWordLength){
+            this.currentCharacter++;
+            this.currentTimeOffset = 0;
+          }
+          for(var k=0;k<this.currentCharacter;k++){
+            word.push(this.currentWord[k]);
+          }
+  
+          for(var i=0;i<this.currentWordLength - this.currentCharacter;i++){
+            word.push(this.getRandCharacter(this.currentWord[this.currentCharacter+i]));
+          }
+  
+  
+          if(that.useCanvas){
+            c.clearRect(0,0,stage.x * stage.dpr , stage.y * stage.dpr);
+            c.font = that.fontSize + " sans-serif";
+            var spacing = 0;
+            word.forEach(function (w,index) {
+              if(index > that.currentCharacter){
+                c.fillStyle = that.getRandomColor();
+              }else{
+                c.fillStyle = that.textColor;
+              }
+              c.fillText(w, that.position.x + spacing, that.position.y);
+              spacing += c.measureText(w).width;
+            });
+          }else{
+  
+            if(that.currentCharacter === that.currentWordLength){
+              that.needUpdate = false;
+            }
+            this.holder.innerHTML = '';
+            word.forEach(function (w,index) {
+              var color = null
+              if(index > that.currentCharacter){
+                color = that.getRandomColor();
+              }else{
+                color = that.textColor;
+              }
+              that.holder.appendChild(that.generateSingleCharacter(color, w));
+            }); 
+          }
+          this.then = this.now - (this.delta % this.interval);
+        }
+    }
+  
+    this.restart = function () {
+      this.currentCharacter = 0;
+      this.needUpdate = true;
+    }
+  
+    function update(time) {
+      time++;
+      if(that.needUpdate){
+        that.updateCharacter(time);
+      }
+      requestAnimationFrame(update);
+    }
+  
+    this.writeWord(this.holder.innerHTML);
+  
+  
+    console.log(this.currentWord);
+    update(time);
+  }
 
-function plusSlides(e) {
-    showSlides(slideIndex += e)
-}
+  var headline = document.getElementById('headline');
+  
+  var headText = new WordShuffler(headline,{
+    textColor : '#fff',
+    timeOffset : 2,
+    mixCapital : true,
+    mixSpecialCharacters : true
+  });
+  
 
-function currentSlide(e) {
-    showSlides(slideIndex = e)
-}
-
-function showSlides(e) {
-    var t, a = document.getElementsByClassName("mySlides"),
-        n = document.getElementsByClassName("description"),
-        i = document.getElementById("event");
-        j = document.getElementById("department");
-    for (e > a.length && (slideIndex = 1), e < 1 && (slideIndex = a.length), t = 0; t < a.length; t++) a[t].style.display = "none";
-    for (t = 0; t < n.length; t++) n[t].className = n[t].className.replace(" opacity-100", "");
-    a[slideIndex - 1].style.display = "block", n[slideIndex - 1].className += " opacity-100", i.innerHTML = events[slideIndex-1], j.innerHTML = departments[slideIndex-1]
-}
-showSlides(slideIndex);
+  
