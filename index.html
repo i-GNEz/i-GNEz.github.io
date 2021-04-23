@@ -75,42 +75,39 @@
         </h2>
         <p class="text-sm md:text-base text-gray-555 mb-4">Explore your favourite events and
           register now to showcase your talent and win exciting prizes.</p>
-        <button
-          class="bg-transparent hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">Explore
-          Now</button>
+        <a href="#events"
+          class="bg-transparent hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
+          Explore Now</a>
       </div>
-      <div class="p-8 mt-8 md:mt-0 ml-12 lg:w-2/3 justify-center">
-        <div class="h-48 flex flex-wrap content-center  ">
+      <div class="p-8 mt-8 md:mt-0 ml-12 lg:w-2/3 items-center">
+        <div class="h-48 flex flex-wrap ">
           <div><img class="inline-block mt-28 hidden md:block" src="images/left.png"></div>
           <div><img class="inline-block" src="images/center.png"></div>
+          <div><img class="inline-block mt-28 hidden md:block" src="images/right.png"></div>
         </div>
       </div>
     </div>
   </main>  
 
-  <timeline>
+  <timeline id="timeline">
     <div class="container min-h-full mx-auto flex flex-col items-start md:flex-row my-12 md:my-24">
-      <div class="flex mt-2 md:mt-12 flex-col w-full lg:w-1/3 px-8">
+      <div class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12  px-8">
         <p class="ml-2 text-yellow-555 uppercase tracking-loose">Working Process</p>
         <p class="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2">Working Process of Fest</p>
         <p class="text-sm md:text-base text-gray-555 text-gray-555 mb-4">
           Here’s your guide to the tech fest 2021 process. Go through all the steps to know the exact process of the
           fest.
         </p>
-        <button
-          class="bg-transparent hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">Register</button>
       </div>
-      <div class="ml-0 md:ml-12 lg:w-2/3">
+      <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
         <div class="container mx-auto w-full h-full">
           <div class="relative wrap overflow-hidden p-10 h-full">
             <div class="border-2-2 border-yellow-555 absolute h-full border"
               style="right: 50%; border: 2px solid #FFC100; border-radius: 1%;"></div>
             <div class="border-2-2 border-yellow-555 absolute h-full border"
               style="left: 50%; border: 2px solid #FFC100; border-radius: 1%;"></div>
-        
             <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
               <div class="order-1 w-5/12"></div>
-
               <div class="order-1 w-5/12 px-1 py-4 text-right">
                 <p class="mb-3 text-base text-yellow-555">1-6 May, 2021</p>
                 <h4 class="mb-3 font-bold text-lg md:text-2xl">Registration</h4>
@@ -122,7 +119,6 @@
             </div>
             <div class="mb-8 flex justify-between items-center w-full right-timeline">
               <div class="order-1 w-5/12"></div>
-
               <div class="order-1  w-5/12 px-1 py-4 text-left">
                 <p class="mb-3 text-base text-yellow-555">8-9 May, 2021</p>
                 <h4 class="mb-3 font-bold text-lg md:text-2xl">Participation</h4>
@@ -134,7 +130,6 @@
             </div>
             <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
               <div class="order-1 w-5/12"></div>
-
               <div class="order-1 w-5/12 px-1 py-4 text-right">
                 <p class="mb-3 text-base text-yellow-555"> 10 May, 2021</p>
                 <h4 class="mb-3 font-bold text-lg md:text-2xl">Result Declaration</h4>
@@ -164,7 +159,7 @@
     </div>
   </timeline>  
   
-  <events class="pt-20 pb-48">
+  <events id="events" class="pt-20 pb-48">
     <div class="container min-h-full mx-auto px-4">
       <div class="flex flex-wrap justify-center text-center mb-6">
         <div class="w-full lg:w-6/12 px-4">
@@ -174,10 +169,10 @@
       </div>
     <div class="mx-auto md:max-w-2xl mt-6">
 
-      <div id="slidesDiv" class="relative">
-        <a class="absolute left-0 inset-y-0 flex items-center px-4 text-black hover:text-gray-800 cursor-pointer text-3xl font-extrabold"
+      <div id="slidesDiv" class="relative rounded-lg border-2 border-gray-555">
+        <a class="absolute left-0 inset-y-0 flex items-center px-4 text-white hover:text-yellow-555 cursor-pointer text-3xl font-extrabold"
           onclick="plusSlides(-1)">❮</a>
-        <a class="absolute right-0 inset-y-0 flex items-center px-4 text-black hover:text-gray-800 cursor-pointer text-3xl font-extrabold"
+        <a class="absolute right-0 inset-y-0 flex items-center px-4 text-white hover:text-yellow-555 cursor-pointer text-3xl font-extrabold"
           onclick="plusSlides(1)">❯</a>
       </div>
       <div class="p-4">
@@ -276,43 +271,11 @@
         </div>
         <div class="w-full lg:w-6/12 px-4">
           <div class="flex flex-wrap items-top mb-6">
-            <div class="w-full lg:w-4/12 px-4 ml-auto mt-4 md:mt-0">
-              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Solo Events</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/i-GNEz">Event 1</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/i-GNEz">Event 2</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/i-GNEz">Event 3</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/i-GNEz">Event 4</a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-full lg:w-4/12 px-4 mt-4 md:mt-0">
-              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Group Events</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 1</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 2</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 3</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 4</a>
-                </li>
-              </ul>
+            <div class="text-red-light mb-2">Newsletter</div>
+            <p class="text-grey-darker leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
+            <div class="mt-4 flex">
+                <input type="text" class="p-2 border border-grey-light round text-grey-dark text-sm h-auto" placeholder="Your email address">
+                <button class="bg-orange text-white rounded-sm h-auto text-xs p-3">Subscribe</button>
             </div>
           </div>
         </div>
