@@ -1,0 +1,35 @@
+@font-face {
+    font-family: NunitoBold;
+    src: url(../font/NunitoBold.ttf);
+}
+
+.text-space-yellow {
+    color: #FFC100;
+}
+
+.text-space-black {
+    color: #101010;
+}
+
+html,
+body {
+    font-family: NunitoBold;
+    background-color: #101010;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-width: none;
+    -ms-overflow-style: none
+}
+
+body::-webkit-scrollbar {
+    display: none
+}
+
+::-moz-selection {
+    color: #101010;
+    background: #FFC100
+}
+
+::selection {
+    color: #101010;
+    background: #FFC100
+}
