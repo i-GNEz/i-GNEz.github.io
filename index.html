@@ -52,8 +52,21 @@
             <a class="border-b-0 md:border-b-4 border-yellow-555 inline-block py-2 px-4 text-yellow-555 font-bold" href="index.html">Home</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4"
-              href="events.html">Events</a>
+            <!-- <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4"
+              href="events.html">Events</a> -->
+              <div class="dropdown inline-block relative">
+                <button class="hover:text-yellow-555 py-2 px-4 inline-flex items-center">
+                  <span>Events</span>
+                </button>
+                <ul class="dropdown-content absolute hidden pt-1 text-center">
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/cse">CSE/IT</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/me">ME</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ce">CE</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ece">ECE</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ee">EE</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/pe">PE</a></li>
+                </ul>
+              </div>
           </li>
           <li class="mr-3">
             <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="about.html">About</a>
@@ -236,7 +249,6 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl text-gray-700 font-semibold">Stay Connected</h4>
           <h5 class="text-lg mt-0 mb-2 text-gray-700">
             Follow us on social media to get the latest updates
           </h5>
@@ -269,13 +281,16 @@
             </a>
           </div>
         </div>
-        <div class="w-full lg:w-6/12 px-4">
+        <div class="w-full lg:w-6/12 px-4 mt-4 md:mt-0">
           <div class="flex flex-wrap items-top mb-6">
-            <div class="text-red-light mb-2">Newsletter</div>
-            <p class="text-grey-darker leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
+            <h5 class="text-lg mt-0 mb-2 text-gray-700">
+             Enter your email to view the list of your registered events
+            </h5>
             <div class="mt-4 flex">
-                <input type="text" class="p-2 border border-grey-light round text-grey-dark text-sm h-auto" placeholder="Your email address">
-                <button class="bg-orange text-white rounded-sm h-auto text-xs p-3">Subscribe</button>
+              <form action="https://i-gnez.herokuapp.com/register/rcount" method="POST">
+                <input type="email" name="email" id="email" class="p-2 border border-grey-light round text-black-555 text-sm h-auto" placeholder="Your email address">
+                <button type="submit" class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none h-auto text-xs p-3">Submit</button>
+              </form>
             </div>
           </div>
         </div>
