@@ -45,5 +45,4 @@ $('#footerForm').submit(function(e) {
        complete:  console.log('completed'),
        success: alert('success')
   });
-
 })
