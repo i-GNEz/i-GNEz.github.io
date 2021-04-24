@@ -33,3 +33,7 @@ body::-webkit-scrollbar {
     color: #101010;
     background: #FFC100
 }
+
+.dropdown:hover > .dropdown-content {
+	display: block;
+}

@@ -6,29 +6,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Event</title>
+  <title>i-GNEz</title>
   <meta name="author" content="team-techfest" />
   <meta name="description" content="Official Website of i-GNEz 2021 " />
   <meta name="keywords" content="gndec,gne,i-gnez,i,gnez,webiste,techfest,2021" />
-  <link href="css/tailwind.min.css" rel="stylesheet" />
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="../../css/tailwind.min.css" rel="stylesheet" />
+  <link href="../../css/style.css" rel="stylesheet" />
   <link rel="shortcut-icon" href="img/favicon.ico">
   <meta name="msapplication-TileColor" content="#f9fafb">
   <meta name="theme-color" content="#101010">
   <meta name="theme-color" content="#101010">
+  <style>
+    dialog[open] {
+    animation: appear .15s cubic-bezier(0, 1.8, 1, 1.8);
+  }
+  
+    dialog::backdrop {
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.5), rgba(54, 54, 54, 0.5));
+      backdrop-filter: blur(3px);
+    }
+    
+   
+  @keyframes appear {
+    from {
+      opacity: 0;
+      transform: translateX(-3rem);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  } 
+
+  </style>
 </head>
 
 <body class="text-white">
  
-  <nav id="header" class="fixed w-full z-20 top-0">
+  <nav id="header" class="fixed w-full z-20 top-0 bg-black-555">
 
-    <div id="progress" class="h-1 z-40 top-0"
+    <div id="progress" class="h-1 z-40 top-0 bg"
       style="background:linear-gradient(to right, #FFC100 var(--scroll), transparent 0);"></div>
 
     <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
       <div class="block lg:hidden pl-8 p-2">
-				<a class="text-yellow-555 text-base no-underline hover:no-underline " href="index.html">
+				<a class="text-yellow-555 text-base no-underline hover:no-underline " href="../../index.html">
           i-GNEz
 				</a>
 			</div>
@@ -49,30 +73,43 @@
         id="nav-content">
         <ul class="list-reset lg:flex justify-center flex-1 items-center">
           <li class="mr-3">
-            <a class="inline-block py-2 px-4 hover:text-yellow-555 font-bold" href="index.html">Home</a>
+            <a class="inline-block py-2 px-4 hover:text-yellow-555 font-bold" href="../../index.html">Home</a>
+          </li>
+          <li class="mr-3"> 
+            <div class="dropdown inline-block relative">
+              <a href="../../events.html" class="border-b-0 md:border-b-4 border-yellow-555 text-yellow-555 py-2 px-4 inline-flex items-center">
+                <span>Events</span>
+              </a>
+              <ul class="dropdown-content absolute hidden pt-1 text-center">
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../cse.html">CSE/IT</a></li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../cse.html">CSE/IT</a></li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ece.html">ECE/EE</a></li>                
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../me.html">ME</a></li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ce.html">CE</a></li>
+
+                
+              </ul>
+            </div>
+        </li>
+          <li class="mr-3">
+            <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../about.html">About</a>
           </li>
           <li class="mr-3">
             <a class="inline-block hover:text-yellow-555 py-2 px-4"
-              href="events.html">Events</a>
-          </li>
-          <li class="mr-3">
-            <a class="inline-block hover:text-yellow-555 py-2 px-4" href="about.html">About</a>
-          </li>
-          <li class="mr-3">
-            <a class="border-b-0 md:border-b-4 border-yellow-555 inline-block text-yellow-555 py-2 px-4"
-              href="contact.html">Contact</a>
+              href="../../contact.html">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   
-  <contact>
+  <section>
     <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-36"> 
 
-  <div class="flex mt-2 md:mt-12 flex-col w-full lg:w-2/5 px-8">
-    <img src="images/1.png" alt="" class="overflow-hidden">
-    <button class="mx-auto bg-transparent mt-4 md:mt-8 hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
+  <div class="flex mt-6 md:mt-12 flex-col w-full lg:w-2/5 px-8">
+    <img src="../../images/1.png" alt="event image" class="overflow-hidden rounded-lg border-2 border-gray-555">
+    <button  onclick="document.getElementById('formModal').showModal()"
+     class="mx-auto bg-transparent mt-4 md:mt-8 hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
       Register
     </button>
   </div>
@@ -125,10 +162,9 @@
       </div>
       </div>
     </div>
-
     </div>
   </div>
-  </contact>
+  </section>
 
   <footer class="relative bg-gray-555 pt-8 pb-6">
     <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20"
@@ -141,18 +177,22 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap">
         <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl text-gray-700 font-semibold">Stay Connected</h4>
           <h5 class="text-lg mt-0 mb-2 text-gray-700">
             Follow us on social media to get the latest updates
           </h5>
           <div class="mt-6">
-            <a href=""
+            <a href="https://youtube.com/channel/UCbYP5FkaBTa9qjpcfAjlmKA"
+              class="transition duration-700 ease-in-out text-black-555 hover:text-red-500 font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
+              type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path class="fill-current" d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+            </a>
+            <a href="https://twitter.com/iGNEz21"
               class="transition duration-700 ease-in-out text-black-555 hover:text-blue-400 font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
               type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path class="fill-current"
                   d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
                 </svg>
-            </a><a href=""
+            </a><a href="https://www.facebook.com/I-GNEz-109168831303969/"
               class="transition duration-700 ease-in-out text-black-555 hover:text-blue-400 font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2 p-3"
               type="button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path class="fill-current"
@@ -174,45 +214,16 @@
             </a>
           </div>
         </div>
-        <div class="w-full lg:w-6/12 px-4">
+        <div class="w-full lg:w-6/12 px-4 mt-4 md:mt-0">
           <div class="flex flex-wrap items-top mb-6">
-            <div class="w-full lg:w-4/12 px-4 ml-auto mt-4 md:mt-0">
-              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Solo Events</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/i-GNEz">Event 1</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/i-GNEz">Event 2</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/i-GNEz">Event 3</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm"
-                    href="https://github.com/i-GNEz">Event 4</a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-full lg:w-4/12 px-4 mt-4 md:mt-0">
-              <span class="block uppercase text-gray-600 text-sm font-semibold mb-2">Group Events</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 1</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 2</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 3</a>
-                </li>
-                <li>
-                  <a class="text-gray-700 hover:text-gray-900 font-semibold block pb-2 text-sm" href="">Event 4</a>
-                </li>
-              </ul>
+            <h5 class="text-lg mt-0 mb-2 text-gray-700">
+             Enter your email to view the list of your registered events
+            </h5>
+            <div class="mt-4 flex">
+              <form id="footerForm" action="" method="POST">
+                <input type="email" name="email" id="email" class="p-2 border border-grey-light round text-black-555 placeholder-gray-400 text-sm h-auto" placeholder="email address">
+                <button type="submit" class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none text-xs p-3">Submit</button>
+              </form>
             </div>
           </div>
         </div>
@@ -229,6 +240,76 @@
     </div>
   </footer> 
 
+  <dialog id="formModal" class="w-11/12 md:w-1/4 p-5  m-auto bg-white rounded-md">  
+    <div class="flex flex-col w-full "> 
+         <div class="flex w-full justify-center items-center">
+           <div class="flex w-10/12 py-3  justify-center items-center text-2xl font-bold">
+              Registration Form
+           </div>
+           <div onclick="document.getElementById('formModal').close();" class="flex w-1/12 justify-center cursor-pointer">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+           </div> 
+         </div> 
+            <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555">
+              <form id="registrationForm" action="" method="POST" >
+
+                <div class="my-5 text-sm">
+                     <input type="text" maxlength="100" name="name" autofocus id="name" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the Participant" required/>
+                </div>
+
+                <div class="my-5 text-sm">
+                   <input type="text"  name="email" id="team_email" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Email of the Participant" required/>
+              </div>
+
+              <div class="my-5 text-sm">
+                 <input min="1000000000" max="9999999999" type="number"  name="phone_no" id="phone_no" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Mobile Number" required/>
+            </div>
+
+            <div class="my-5 text-sm">
+              <select name="gender" id="gender" 
+              class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
+               w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500">
+              <option value="" disabled selected hidden>Gender</option>
+              <option value="m">Male</option>
+              <option value="f">Female</option>
+              <option value="o">Other</option>
+            </select>
+          </div>
+
+          <div class="my-5 text-sm">
+             <input type="text"  maxlength="100" name="college" id="college" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the college" required/>
+        </div>
+
+        <div class="my-5 text-sm">
+           <input type="text"  maxlength="100" name="college_city" id="college_city" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College City" required/>
+      </div>
+
+      <div class="my-5 text-sm">
+         <input type="text"  maxlength="100" name="college_roll_no" id="college_roll_no" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College Roll No" required/>
+    </div>
+
+      <input type="hidden" id="event_name" name="event_name" value="designer in you">
+      <input type="hidden" id="team_name" name="team_name" value=""> 
+                <button type="submit" class="block text-center text-black-555 bg-yellow-555 p-3 duration-300 rounded-sm hover:bg-yellow-400 w-full">Register</button>
+            </form> 
+           </div> 
+         </div>
+ </dialog>
+
 </body>
-<script src="js/scripts.js" type="text/javascript"></script>
+<script src="../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../js/index.js" type="text/javascript"></script>
+<script>
+  $('#registrationForm').submit(function(e) { 
+  document.getElementById("team_name").value = document.getElementById("team_email").value
+  e.preventDefault();
+  $.ajax({
+       type: 'POST',
+       url: 'https://i-gnez.herokuapp.com/register',
+       data: $(this).serialize(),
+       complete:  console.log('completed'),
+       success: alert('registered successfully')
+  });
+})
+</script>
 </html>
