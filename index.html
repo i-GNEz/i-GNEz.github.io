@@ -53,16 +53,14 @@
           </li>
           <li class="mr-3"> 
               <div class="dropdown inline-block relative">
-                <button class="hover:text-yellow-555 py-2 px-4 inline-flex items-center">
+                <a href="events.html" class="hover:text-yellow-555 py-2 px-4 inline-flex items-center">
                   <span>Events</span>
-                </button>
+                </a>
                 <ul class="dropdown-content absolute hidden pt-1 text-center">
                   <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/cse.html">CSE/IT</a></li>
+                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ece.html">ECE/EE</a></li>
                   <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/me.html">ME</a></li>
                   <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ce.html">CE</a></li>
-                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ece.html">ECE</a></li>
-                  <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="events/ee.html">EE</a></li>
-                  
                 </ul>
               </div>
           </li>
@@ -216,7 +214,7 @@
                   </div>
                   <div class="relative w-full mb-3">
                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
-                      for="message">Message</label><textarea name="feedback" id="feedback" rows="4" cols="80"
+                      for="message">Message</label><textarea  maxlength="300" name="feedback" id="feedback" rows="4" cols="80"
                       class="border-0 px-3 py-3 bg-gray-555 placeholder-black-555 text-gray-800 rounded text-sm shadow focus:outline-none w-full"
                       placeholder=""></textarea>
                   </div>

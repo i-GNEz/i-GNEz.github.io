@@ -39,22 +39,6 @@
     }
   } 
 
-  .check input:invalid {
-    border-color: red
-}
-
-.label-floating input:not(:placeholder-shown),
-.label-floating textarea:not(:placeholder-shown) {
-    padding-top: 1.4rem
-}
-
-.label-floating input:not(:placeholder-shown)~label,
-.label-floating textarea:not(:placeholder-shown)~label {
-    font-size: .8rem;
-    transition: all .2s ease-in-out;
-    color: #1f9d55;
-    opacity: 1
-}
   </style>
 </head>
 
@@ -68,7 +52,7 @@
     <div class="w-full md:max-w-4xl mx-auto flex flex-wrap items-center justify-between mt-0 py-3">
 
       <div class="block lg:hidden pl-8 p-2">
-				<a class="text-yellow-555 text-base no-underline hover:no-underline " href="index.html">
+				<a class="text-yellow-555 text-base no-underline hover:no-underline " href="../../index.html">
           i-GNEz
 				</a>
 			</div>
@@ -93,15 +77,16 @@
           </li>
           <li class="mr-3"> 
             <div class="dropdown inline-block relative">
-              <button class="border-b-0 md:border-b-4 border-yellow-555 text-yellow-555 py-2 px-4 inline-flex items-center">
+              <a href="../../events.html" class="border-b-0 md:border-b-4 border-yellow-555 text-yellow-555 py-2 px-4 inline-flex items-center">
                 <span>Events</span>
-              </button>
+              </a>
               <ul class="dropdown-content absolute hidden pt-1 text-center">
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../cse.html">CSE/IT</a></li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../cse.html">CSE/IT</a></li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ece.html">ECE/EE</a></li>                
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../me.html">ME</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ce.html">CE</a></li>
-                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ece.html">ECE</a></li>
-                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ee.html">EE</a></li>
+
                 
               </ul>
             </div>
@@ -121,8 +106,8 @@
   <section>
     <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-36"> 
 
-  <div class="flex mt-2 md:mt-12 flex-col w-full lg:w-2/5 px-8">
-    <img src="../../images/1.png" alt="" class="overflow-hidden rounded-lg border-2 border-gray-555">
+  <div class="flex mt-6 md:mt-12 flex-col w-full lg:w-2/5 px-8">
+    <img src="../../images/1.png" alt="event image" class="overflow-hidden rounded-lg border-2 border-gray-555">
     <button  onclick="document.getElementById('formModal').showModal()"
      class="mx-auto bg-transparent mt-4 md:mt-8 hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
       Register
@@ -269,7 +254,7 @@
               <form id="registrationForm" action="" method="POST" >
 
                 <div class="my-5 text-sm">
-                     <input type="text"  name="name" autofocus id="name" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the Participant" required/>
+                     <input type="text" maxlength="100" name="name" autofocus id="name" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the Participant" required/>
                 </div>
 
                 <div class="my-5 text-sm">
@@ -292,15 +277,15 @@
           </div>
 
           <div class="my-5 text-sm">
-             <input type="text"  name="college" id="college" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the college" required/>
+             <input type="text"  maxlength="100" name="college" id="college" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="Name of the college" required/>
         </div>
 
         <div class="my-5 text-sm">
-           <input type="text"  name="college_city" id="college_city" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College City" required/>
+           <input type="text"  maxlength="100" name="college_city" id="college_city" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College City" required/>
       </div>
 
       <div class="my-5 text-sm">
-         <input type="text"  name="college_roll_no" id="college_roll_no" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College Roll No" required/>
+         <input type="text"  maxlength="100" name="college_roll_no" id="college_roll_no" class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full" placeholder="College Roll No" required/>
     </div>
 
       <input type="hidden" id="event_name" name="event_name" value="designer in you">
@@ -323,7 +308,7 @@
        url: 'https://i-gnez.herokuapp.com/register',
        data: $(this).serialize(),
        complete:  console.log('completed'),
-       success: alert('success')
+       success: alert('registered successfully')
   });
 })
 </script>
