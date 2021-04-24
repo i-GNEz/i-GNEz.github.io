@@ -88,7 +88,7 @@
           class="bg-transparent hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
           Explore Now</a>
       </div>
-      <div class="p-8 mt-8 md:mt-0 ml-12 lg:w-2/3  justify-center">
+      <div class="p-8 mt-12 mb-6 md:mb-0 md:mt-0 ml-0 md:ml-12 lg:w-2/3  justify-center">
         <div class="h-48 flex flex-wrap content-center">
           <div><img class="inline-block mt-28 hidden md:block" src="images/left.png"></div>
           <div><img class="inline-block" src="images/center.png"></div>
@@ -210,13 +210,13 @@
                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2" for="email">Email</label><input
                       type="email" name="email" id="email" class="border-0 px-3 py-3 rounded text-sm shadow w-full
                     bg-gray-555 placeholder-black-555 text-gray-800 outline-none focus:bg-gray-400" placeholder=" "
-                      style="transition: all 0.15s ease 0s;" />
+                      style="transition: all 0.15s ease 0s;" required/>
                   </div>
                   <div class="relative w-full mb-3">
                     <label class="block uppercase text-gray-700 text-xs font-bold mb-2"
                       for="message">Message</label><textarea  maxlength="300" name="feedback" id="feedback" rows="4" cols="80"
                       class="border-0 px-3 py-3 bg-gray-555 placeholder-black-555 text-gray-800 rounded text-sm shadow focus:outline-none w-full"
-                      placeholder=""></textarea>
+                      placeholder="" required></textarea>
                   </div>
                   <div class="text-center mt-6">
                     <button
@@ -289,7 +289,7 @@
             </h5>
             <div class="mt-4 flex">
               <form id="footerForm" action="" method="POST">
-                <input type="email" name="email" id="email" class="p-2 border border-grey-light round text-black-555 placeholder-gray-555 text-sm h-auto" placeholder="email address">
+                <input type="email" name="email" id="email" class="p-2 border border-grey-light round text-black-555 placeholder-gray-555 text-sm h-auto" placeholder="email address" required/>
                 <button type="submit" class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none h-auto text-xs p-3">Submit</button>
               </form>
             </div>
@@ -319,8 +319,12 @@
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/feedback',
        data: $(this).serialize(),
-       complete:  console.log('completed'),
-       success: alert('success')
+       statusCode: {
+        200:function(response){
+          console.log(response);
+          alert('Thank you for providing your valuable feedback')
+        }
+      }
   });
 })
 </script>

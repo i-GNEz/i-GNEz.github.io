@@ -8,13 +8,9 @@ var scrollpos = window.scrollY;
 var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 
-document.addEventListener('scroll', function () {
-
-    /*Refresh scroll % width*/
+document.addEventListener('scroll', function () { 
     scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
     progress.style.setProperty('--scroll', scroll + '%');
-
-    /*Apply classes for slide in bar*/
     scrollpos = window.scrollY;
 
     if (scrollpos > 10) {
@@ -30,8 +26,6 @@ document.addEventListener('scroll', function () {
 
 });
 
-
-//Javascript to toggle the menu
 document.getElementById('nav-toggle').onclick = function () {
     document.getElementById("nav-content").classList.toggle("hidden");
 }
@@ -42,7 +36,11 @@ $('#footerForm').submit(function(e) {
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/rcount',
        data: $(this).serialize(),
-       complete:  console.log('completed'),
-       success: alert('success')
+       statusCode: {
+        200:function(response){
+          console.log(response);
+          alert('Please check your inbox')
+        }
+      }
   });
 })
