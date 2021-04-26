@@ -36,11 +36,6 @@ $('#footerForm').submit(function(e) {
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/rcount',
        data: $(this).serialize(),
-       statusCode: {
-        200:function(response){
-          console.log(response);
-          alert('Please check your inbox')
-        }
-      }
+       complete: alert('Please check your Inbox')
   });
 })

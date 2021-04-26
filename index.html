@@ -318,13 +318,9 @@
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/feedback',
        data: $(this).serialize(),
-       statusCode: {
-        200:function(response){
-          console.log(response);
-          alert('Thank you for providing your valuable feedback')
-        }
-      }
+       complete: alert('Thank you for providing your valuable feedback')
   });
+  document.getElementById("feedbackForm").reset();
 })
 </script>
 </html>
