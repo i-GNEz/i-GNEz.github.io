@@ -36,11 +36,21 @@ $('#footerForm').submit(function(e) {
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/rcount',
        data: $(this).serialize(),
-       statusCode: {
-        200:function(response){
-          console.log(response);
-          alert('Please check your inbox')
-        }
-      }
+       complete: openClose('emailModal', 'List send sucessfully', 'Please check your inbox for further details')
   });
 })
+
+
+$(document).ready(function() {
+preloaderFadeOutTime = 500;
+function hidePreloader() {
+var preloader = $('.spinner-wrapper');
+preloader.fadeOut(preloaderFadeOutTime);
+}
+hidePreloader();
+});
+
+function openClose(e, t, a) {
+    var n = document.getElementById(e);
+    message = n.getElementsByClassName("message")[0], title = n.getElementsByClassName("modalTitle")[0], message.innerHTML = a, title.innerHTML = t, "none" === n.style.display ? n.style.display = "block" : n.style.display = "none"
+}
