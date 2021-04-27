@@ -437,6 +437,10 @@
           waitingBtn.style.display = "none";
         },
         409: function (response) {
+	$('#name_').val("");
+	$('#team_email').val("");
+	$('#gender').val("");
+	$('#college_roll_no').val("");
           title.innerHTML = 'User already registered';
           title.classList.add("text-red-500");
           submitBtn.style.display = "block";
