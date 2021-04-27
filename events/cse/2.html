@@ -462,13 +462,17 @@
           waitingBtn.style.display = "none";
           },
           409: function (response) {
+	$('#name_').val("");
+	$('#team_email').val("");
+	$('#gender').val("");
+	$('#college_roll_no').val("");
             title.innerHTML = 'User already registered';
             title.classList.add("text-red-500");
             submitBtn.style.display = "block";
           waitingBtn.style.display = "none";
           },
           400: function (response) {
-            title.innerHTML = "Event doesn't exist";
+            title.innerHTML = "Something went wrong";
             title.classList.add("text-red-500");
             submitBtn.style.display = "block";
           waitingBtn.style.display = "none";
