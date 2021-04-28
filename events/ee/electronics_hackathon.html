@@ -122,7 +122,8 @@
                     href="../me.html">ME/PE</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
                     href="../ce.html">CE</a></li>
-
+                    <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
+                      href="../other.html">Other</a></li>
 
               </ul>
             </div>
@@ -151,10 +152,10 @@
       </div>
 
       <div class="flex flex-col w-full lg:w-3/5 p-8">
-        <p class="text-3xl md:text-5xl text-yellow-555 my-4 leading-relaxed md:leading-snug">Codey Relay 2021</p>
+        <p class="text-3xl md:text-5xl text-yellow-555 my-4 leading-relaxed md:leading-snug">Electronics Hackathon</p>
         <p class="text-sm md:text-base text-gray-555 mb-4">
-          Some description of the event like what is it about how long is it going to be or whatever the details
-          required will come here. It can be of two or three lines and it can even be a paragraph.
+          An electronics hackathon where the key of the next question will lie in the
+answer of the previous one.
         </p>
 
         <p class="font-sans text-sm md:text-lg my-2"><svg class="inline-block fill-current mr-2"
@@ -169,19 +170,46 @@
               d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 12v-6h-2v8h7v-2h-5z" />
             </svg>
           10:00 AM</p>
+
+          <div class="my-2">
+            <p class="text-yellow-555 uppercase my-4 ">Rules and Regulations</p>
+            <p class="text-sm md:text-base text-gray-555 mb-4">
+              1. Make sure if you are registered then added in the WhatsApp group. <br>
+
+2. There will be three rounds.
+Time limit to each round will be two hours. <br>
+
+3. There will be a password for every second round, if your answer is correct then only Next rounds will open. <br>
+
+4. Answer you got after solving every round (without any spacing) will be the password for the next round. Numeric in nature <br>
+Eg:- if your answers 10 amp and 20 volts <br>
+Password: 1020 <br>
+
+5. Don't share the answers to anyone, even not to the organizers. <br>
+
+6. Instruction about submission of final round answers will be conveyed at the instant. <br>
+
+7. Winners will be decided on the basis of maximum score gained in limit time. <br>
+
+8. Answers and winners can't be challenged.
+
+            </p>
+          </div>
+
         <div class="my-2">
           <p class="text-yellow-555 uppercase my-4 ">Event's Details</p>
           <table class="table-auto md:w-1/2 ">
 
             <tbody>
               <tr>
-                <td class="p-2">No. of Participants</td>
-                <td class="p-2">2-4</td>
+                <td class="p-2">Members per Team</td>
+                <td class="p-2">3</td>
               </tr>
               <tr>
-                <td class="p-2">Winning Prize</td>
-                <td class="p-2">Wrist Watch</td>
+                <td class="p-2">No. of Rounds</td>
+                <td class="p-2">6</td>
               </tr>
+              
             </tbody>
           </table>
         </div>
@@ -191,17 +219,26 @@
 
             <tbody>
               <tr>
+                <td class="p-2">No. of Organisers</td>
+                <td class="p-2">5</td>
+              </tr>
+              <tr>
                 <td class="p-2">Organiser’s name</td>
-                <td class="p-2">Sudhanshu Dubey</td>
+                <td class="p-2">1. Sanu Kumar <br>
+                  2. Puran Singh <br>
+                 3. Nandini Goyal <br>
+                 4. Purti Jain <br>
+                 5. Harshit Singh 
+                </td>
               </tr>
               <tr>
                 <td class="p-2">Phone number</td>
-                <td class="p-2">6784646464</td>
+                <td class="p-2">1. +91 79090 79402 <br>
+                 2. +91 84370 72767 <br>
+                3. +91 97790 15329
+</td>
               </tr>
-              <tr>
-                <td class="p-2">Email</td>
-                <td class="p-2">sudhanshu@gmail.com</td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -393,6 +430,44 @@
       </div>
     </div>
   </div>
+
+  <modal id="emailModal" style="display: none;">
+    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden
+         shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full
+               bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-width="2"
+                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.393 7.5l-5.643 5.784-2.644-2.506-1.856 1.858 4.5 4.364 7.5-7.643-1.857-1.857z" />
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 class="modalTitle text-lg leading-6 font-medium text-gray-900">
+                </h3>
+                <div class="mt-2">
+                  <p class="message text-sm text-gray-500">
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+            <button onclick="openClose('emailModal', 'Closing Dialog', 'Exiting...')" type="button"
+              class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal>
 
 </body>
 <script src="../../js/jquery.min.js" type="text/javascript"></script>
