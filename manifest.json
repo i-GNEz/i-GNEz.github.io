@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#101010",
     "theme_color": "#101010",
-    "description": "Official TechnoFest Website",
+    "description": "Welcome To The TechFest",
     "dir": "ltr",
     "lang": "en-US",
     "orientation": "portrait",
@@ -23,11 +23,6 @@
         {
             "src": "images/icons/Icon-72.png",
             "sizes": "72x72",
-            "type": "image/png"
-        },
-        {
-            "src": "images/icons/Icon-96.png",
-            "sizes": "96x96",
             "type": "image/png"
         },
         {
