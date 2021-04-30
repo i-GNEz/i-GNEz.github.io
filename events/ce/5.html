@@ -323,7 +323,7 @@
             <div class="my-5 text-sm">
               <input min="1000000000" max="9999999999" type="number" name="phone_no" id="phone_no"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
-                placeholder="Mobile Number" required />
+                placeholder="10 digit phone number" required />
             </div>
             <div class="my-5 text-sm">
               <select name="team_count" id="team_count" class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
@@ -506,10 +506,10 @@
   var count_members;
   var formHeader = document.getElementById("formHeader");
   var submitBtn = document.getElementById("addMember");
-  var  waitingBtn = document.getElementById("waitingBtn");
-  var  title = document.getElementById("formTitle");
-  var  form = document.getElementById("registrationForm");
-  var  successMsg = document.getElementById("successMsg");
+  var waitingBtn = document.getElementById("waitingBtn");
+  var title = document.getElementById("formTitle");
+  var form = document.getElementById("registrationForm");
+  var successMsg = document.getElementById("successMsg");
   $(document).ready(function () {
     $('#registrationForm').submit(function (e) {
 
@@ -531,23 +531,23 @@
             title.innerHTML = 'Invalid data';
             title.classList.add("text-red-500");
             submitBtn.style.display = "block";
-          waitingBtn.style.display = "none";
+            waitingBtn.style.display = "none";
           },
           409: function (response) {
-	$('#name_').val("");
-	$('#team_email').val("");
-	$('#gender').val("");
-	$('#college_roll_no').val("");
+            $('#name_').val("");
+            $('#team_email').val("");
+            $('#gender').val("");
+            $('#college_roll_no').val("");
             title.innerHTML = 'User already registered';
             title.classList.add("text-red-500");
             submitBtn.style.display = "block";
-          waitingBtn.style.display = "none";
+            waitingBtn.style.display = "none";
           },
           400: function (response) {
             title.innerHTML = "Something went wrong";
             title.classList.add("text-red-500");
             submitBtn.style.display = "block";
-          waitingBtn.style.display = "none";
+            waitingBtn.style.display = "none";
           },
           200: function (response) {
             if (document.getElementById("team_count")) {
@@ -565,8 +565,8 @@
               member++;
             } else {
               form.remove();
-          formHeader.style.display = "none";
-          successMsg.style.display = "block";
+              formHeader.style.display = "none";
+              successMsg.style.display = "block";
             }
           }
         },

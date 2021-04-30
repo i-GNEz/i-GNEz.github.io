@@ -330,7 +330,7 @@
       <div class="modal-content py-4 text-left px-6">
 
         <div class="flex text-black-555 justify-between items-center pb-3">
-          <p id="formHeader" class="font-bold text-2xl md:text-3xl p-2 md:p-4">Team Registration</p>
+          <p id="formHeader" class="text-2xl md:text-3xl p-2 md:p-4 font-bold mx-auto"> Registration Form</p>
           <div class="modal-close cursor-pointer z-50">
             <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
               viewBox="0 0 18 18">
@@ -341,12 +341,12 @@
           </div>
         </div>
         <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555">
-          <p id="successMsg" style="display: none;" class="text-yellow-555 text-2xl md:3xl p-2 md:m-4">Registration
+          <p id="successMsg" style="display: none;" class="text-green-400 text-2xl md:3xl p-2 md:m-4">Registration
             successful</p>
           <form id="registrationForm" action="" method="POST">
-            <p id="formTitle" class="text-black-555">Team Leader</p>
+            <p id="formTitle" class="text-black-555">Fill up this form</p>
             <div class="my-5 text-sm">
-              <input type="text" maxlength="100" name="name" id="name_" autofocus id="name"
+              <input type="text" maxlength="100" name="name" autofocus id="name"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="Name of the Participant" required />
             </div>
@@ -360,22 +360,12 @@
             <div class="my-5 text-sm">
               <input min="1000000000" max="9999999999" type="number" name="phone_no" id="phone_no"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
-                placeholder="Mobile Number" required />
+                placeholder="10 digit phone number" required />
             </div>
-            <div class="my-5 text-sm">
-              <select name="team_count" id="team_count" class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
-         w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
-                required>
-                <option value="" disabled selected hidden>Members In Team</option>
 
-                <option value=2>2</option>
-                <option value=3>3</option>
-
-              </select>
-            </div>
             <div class="my-5 text-sm">
               <select name="gender" id="gender" class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
-         w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
+       w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
                 required>
                 <option value="" disabled selected hidden>Gender</option>
                 <option value="m">Male</option>
@@ -402,13 +392,10 @@
                 placeholder="College Roll No" required />
             </div>
 
-            <input type="hidden" id="event_name" name="event_name" value="sputnik">
+            <input type="hidden" id="event_name" name="event_name" value="Sputnik">
             <input type="hidden" id="team_name" name="team_name" value="">
-
-            <button type="submit" id="addMember"
-              class="text-center my-5 text-black-555 bg-yellow-555 p-3 duration-300 rounded-sm hover:bg-yellow-400 w-full">Register
-              Leader</button>
-
+            <button type="submit" id="submitBtn"
+              class="block text-center text-black-555 bg-yellow-555 p-3 duration-300 rounded-sm hover:bg-yellow-400 w-full">Register</button>
 
             <button id="waitingBtn" style="display: none;"
               class="text-center my-5 text-black-555 bg-yellow-555 p-3 duration-300 rounded-sm hover:bg-yellow-400 w-full cursor-not-allowed"
