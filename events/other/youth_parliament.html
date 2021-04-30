@@ -491,80 +491,52 @@
     }
   }
 
-  var totalMembers = 3 // change only total members for every event 
-  var member = 2
-  var counter = false;
-  var team_name_value;
-  var count_members;
+  var submitBtn = document.getElementById("submitBtn");
   var formHeader = document.getElementById("formHeader");
-  var submitBtn = document.getElementById("addMember");
   var waitingBtn = document.getElementById("waitingBtn");
   var title = document.getElementById("formTitle");
   var form = document.getElementById("registrationForm");
   var successMsg = document.getElementById("successMsg");
-  $(document).ready(function () {
-    $('#registrationForm').submit(function (e) {
-
-
-      submitBtn.style.display = "none";
-      waitingBtn.style.display = "block";
-      if (member == 2) {
-        team_name_value = document.getElementById("team_email").value;
-        count_members = document.getElementById("team_count").value;
-      }
-      document.getElementById("team_name").value = team_name_value;
-      e.preventDefault();
-      $.ajax({
-        type: 'POST',
-        url: 'https://i-gnez.herokuapp.com/register',
-        data: $(this).find("[name!=team_count]").serialize(),
-        statusCode: {
-          422: function (response) {
-            title.innerHTML = 'Invalid data';
-            title.classList.add("text-red-500");
-            submitBtn.style.display = "block";
-            waitingBtn.style.display = "none";
-          },
-          409: function (response) {
-            $('#name_').val("");
-            $('#team_email').val("");
-            $('#gender').val("");
-            $('#college_roll_no').val("");
-            title.innerHTML = 'User already registered';
-            title.classList.add("text-red-500");
-            submitBtn.style.display = "block";
-            waitingBtn.style.display = "none";
-          },
-          400: function (response) {
-            title.innerHTML = "Something went wrong";
-            title.classList.add("text-red-500");
-            submitBtn.style.display = "block";
-            waitingBtn.style.display = "none";
-          },
-          200: function (response) {
-            if (document.getElementById("team_count")) {
-              document.getElementById("team_count").remove();
-            }
-            $('#name_').val("");
-            $('#team_email').val("");
-            $('#gender').val("");
-            $('#college_roll_no').val("");
-            if (member <= count_members) {
-              document.getElementById("addMember").innerHTML = "Register Member " + member
-              document.getElementById("formTitle").innerHTML = "Member " + member
-              submitBtn.style.display = "block";
-              waitingBtn.style.display = "none";
-              member++;
-            } else {
-              form.remove();
-              formHeader.style.display = "none";
-              successMsg.style.display = "block";
-            }
-          }
+  $('#registrationForm').submit(function (e) {
+    submitBtn.style.display = "none";
+    waitingBtn.style.display = "block";
+    document.getElementById("team_name").value = document.getElementById("team_email").value
+    e.preventDefault();
+    request = $.ajax({
+      type: 'POST',
+      url: '//i-gnez.herokuapp.com/register',
+      data: $(this).serialize(),
+      statusCode: {
+        422: function (response) {
+          title.innerHTML = 'Invalid data';
+          title.classList.add("text-red-500");
+          submitBtn.style.display = "block";
+          waitingBtn.style.display = "none";
         },
-      })
-    })
-  });
+        409: function (response) {
+          $('#name_').val("");
+          $('#team_email').val("");
+          $('#gender').val("");
+          $('#college_roll_no').val("");
+          title.innerHTML = 'User already registered';
+          title.classList.add("text-red-500");
+          submitBtn.style.display = "block";
+          waitingBtn.style.display = "none";
+        },
+        400: function (response) {
+          title.innerHTML = "Something went wrong";
+          title.classList.add("text-red-500");
+          submitBtn.style.display = "block";
+          waitingBtn.style.display = "none";
+        },
+        200: function (response) {
+          form.remove();
+          formHeader.style.display = "none";
+          successMsg.style.display = "block";
+        }
+      }
+    });
+  })
 </script>
 
 </html>
