@@ -10,12 +10,55 @@
   <meta name="author" content="team-techfest" />
   <meta name="description" content="Official Website of i-GNEz 2021 " />
   <meta name="keywords" content="gndec,gne,i-gnez,i,gnez,webiste,techfest,2021" />
+  <link rel="apple-touch-icon" sizes="57x57" href="images/icons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/icons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/icons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/icons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/icons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/icons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/icons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/icons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/icons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/icons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/logo.png">
+  <link rel="shortcut-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
   <link href="css/tailwind.min.css" rel="stylesheet" />
   <link href="css/style.css" rel="stylesheet" />
   <link rel="shortcut-icon" href="img/favicon.ico">
   <meta name="msapplication-TileColor" content="#f9fafb">
   <meta name="theme-color" content="#101010">
   <meta name="theme-color" content="#101010">
+  <!-- Start of Async Drift Code -->
+  <script>
+    "use strict";
+
+    !function () {
+      var t = window.driftt = window.drift = window.driftt || [];
+      if (!t.init) {
+        if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+        t.invoked = !0, t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
+          t.factory = function (e) {
+            return function () {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function (e) {
+            t[e] = t.factory(e);
+          }), t.load = function (t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+      }
+    }();
+    drift.SNIPPET_VERSION = '0.3.1';
+    drift.load('hnffgth9kcpa');
+  </script>
+  <!-- End of Async Drift Code -->
 </head>
 
 <body class="text-white">
@@ -37,12 +80,7 @@
     <div id="progress" class="h-1 z-40 top-0"
       style="background:linear-gradient(to right, #FFC100 var(--scroll), transparent 0);"></div>
     <div class="w-full md:max-w-9xl  lg:mx-26 md:mx-2 sm:mx-26 flex flex-wrap items-center justify-between mt-0 py-3">
-      <a href="index.html"><img class="w-12 mr-2" src="images/logo.png" alt=""></a>
-      <div class="block lg:hidden pl-8 p-2">
-        <a class="text-yellow-555 text-base no-underline hover:no-underline " href="index.html">
-          i-GNEz
-        </a>
-      </div>
+      <div class="md:p-4 ml-4"><a href="index"><img class="w-12" src="images/logo.png" alt="event logo"></a></div>
       <div class="block lg:hidden pr-4">
         <button id="nav-toggle" class="flex items-center px-3 py-2 text-yellow-555 border-gray-600 focus:outline-none">
           <svg fill="text-yellow-555" viewBox="0 0 20 20" class="w-6 h-6 fill-current">
@@ -58,33 +96,36 @@
         id="nav-content">
         <ul class="list-reset lg:flex justify-center flex-1 items-center">
           <li class="mr-3">
-            <a class="inline-block py-2 px-4 hover:text-yellow-555 font-bold" href="index.html">Home</a>
+            <a class="inline-block py-2 px-4 hover:text-yellow-555 font-bold" href="index">Home</a>
           </li>
           <li class="mr-3">
             <div class="dropdown inline-block relative">
-              <a href="events.html" class="hover:text-yellow-555 py-2 px-4 inline-flex items-center">
+              <a href="events" class="hover:text-yellow-555 py-2 px-4 inline-flex items-center">
                 <span>Events</span>
               </a>
               <ul class="dropdown-content absolute hidden pt-1 text-center">
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
-                    href="events/cse.html">CSE/IT</a></li>
+                    href="events/cse">CSE/IT</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
-                    href="events/ee.html">ECE/EE</a></li>
+                    href="events/ee">ECE/EE</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
-                    href="events/me.html">ME/PE</a></li>
+                    href="events/me">ME/PE</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
-                    href="events/ce.html">CE</a></li>
+                    href="events/ce">CE</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
-                    href="events/other.html">Other</a></li>
+                    href="events/other">Other</a></li>
               </ul>
             </div>
           </li>
           <li class="mr-3">
-            <a class="inline-block hover:text-yellow-555 py-2 px-4" href="about.html">About</a>
+            <a class="inline-block hover:text-yellow-555 py-2 px-4" href="about">About</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="team">Website Team</a>
           </li>
           <li class="mr-3">
             <a class="border-b-0 md:border-b-4 border-yellow-555 inline-block text-yellow-555 py-2 px-4"
-              href="contact.html">Contact</a>
+              href="contact">Contact</a>
           </li>
         </ul>
       </div>
@@ -93,42 +134,38 @@
 
   <contact>
     <div class="container mx-auto flex flex-col md:flex-row my-12 md:my-36">
-      <div class="flex flex-col w-full lg:w-1/2 p-8">
+      <div class="flex flex-col w-full lg:w-2/5 p-8">
         <p class="text-3xl md:text-5xl text-yellow-555 my-4 leading-relaxed md:leading-snug">Contact our team</p>
-        <p class="text-sm md:text-base text-gray-555 mb-4">
-          <!--Fill in the form and our team will get back to you within 24 hours.-->
-        </p>
-
         <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 11c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" />
-          </svg>Guru Nank Dev Engineering College</p>
+          </svg>Guru Nank Dev Engineering College, Ludhiana</p>
         <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z" />
-          </svg> techfestgndec@gmail.com</p>
+          </svg> techfestgndec@gmail.com, ignez@gndec.ac.in</p>
         <p class="font-sans text-sm md:text-lg my-2 md:my-4"><svg class="inline-block fill-current mr-2"
             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
             <path
               d="M20 22.621l-3.521-6.795c-.008.004-1.974.97-2.064 1.011-2.24 1.086-6.799-7.82-4.609-8.994l2.083-1.026-3.493-6.817-2.106 1.039c-7.202 3.755 4.233 25.982 11.6 22.615.121-.055 2.102-1.029 2.11-1.033z" />
-          </svg>+917888667911</p>
+          </svg>+917888667911, +919572647142</p> <br> <br>
+        <p class="font-sans text-sm md:text-lg my-2 md:my-4">Press the chat icon at the right bottom corner to have a
+          live chat with our team.
+        </p>
       </div>
-      <div class="flex flex-col lg:w-1/2 justify-center w-full">
-        <div class="container w-full px-4">
-          <div class="flex flex-wrap justify-center">
-            <div class="w-full px-4">
-              <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-white">
-                <div class="flex-auto p-5 lg:p-10">
-                  <img src="images/contact.png" alt="">
-                </div>
-              </div>
+      <div class=" flex flex-col lg:w-3/5 justify-center w-full lg:-mt-12">
+        <div class="container">
+          <div class="relative flex flex-col min-w-0 break-words w-full">
+            <div class="flex-auto p-5 lg:p-10">
+              <img src="images/contact.png" alt="contact image">
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </contact>
 
   <footer class="relative bg-gray-555 pt-8 pb-6">
@@ -209,6 +246,44 @@
       </div>
     </div>
   </footer>
+  <modal id="emailModal" style="display: none;">
+    <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden
+         shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full
+               bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                <svg class="h-6 w-6 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" aria-hidden="true">
+                  <path stroke-width="2"
+                    d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.393 7.5l-5.643 5.784-2.644-2.506-1.856 1.858 4.5 4.364 7.5-7.643-1.857-1.857z" />
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 class="modalTitle text-lg leading-6 font-medium text-gray-900">
+                </h3>
+                <div class="mt-2">
+                  <p class="message text-sm text-gray-500">
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+            <button onclick="openClose('emailModal', 'Closing Dialog', 'Exiting...')" type="button"
+              class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </modal>
+
 </body>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>

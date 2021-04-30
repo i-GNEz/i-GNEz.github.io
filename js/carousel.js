@@ -1,5 +1,5 @@
-var events = ["Workshop", "Code Relay", "Hackathon", "Electrohack"];
-var departments = ["Mechanical Engineering", "Computer Science Engineering", "Computer Science Engineering", "Electronics Engineering"];
+var events = ["Engineers on Board", "Code Relay 3.0", "Electronics Hackathon", "kaintCAD"];
+var departments = ["A chess event", "Computer Science Engineering", "Electronics and Comm. Engg.", "Mechancal Engineering"];
 var totalLayout = 4
 
 function createSlide() {
@@ -26,9 +26,9 @@ function showSlides(e) {
     var t, a = document.getElementsByClassName("mySlides"),
         n = document.getElementsByClassName("description"),
         i = document.getElementById("event");
-        j = document.getElementById("department");
+    j = document.getElementById("department");
     for (e > a.length && (slideIndex = 1), e < 1 && (slideIndex = a.length), t = 0; t < a.length; t++) a[t].style.display = "none";
     for (t = 0; t < n.length; t++) n[t].className = n[t].className.replace(" opacity-100", "");
-    a[slideIndex - 1].style.display = "block", n[slideIndex - 1].className += " opacity-100", i.innerHTML = events[slideIndex-1], j.innerHTML = departments[slideIndex-1]
+    a[slideIndex - 1].style.display = "block", n[slideIndex - 1].className += " opacity-100", i.innerHTML = events[slideIndex - 1], j.innerHTML = departments[slideIndex - 1]
 }
-showSlides(slideIndex); 
+showSlides(slideIndex);
