@@ -14,7 +14,7 @@ The Api will accept the url encoded data only, Following is the list of paramete
 
 The api on post request will return a json {'message':'corresponding message'}
 
-1. If everything will be correct and the user was already not registered then the message returned in json will be 'registered successfully'
+1. If everything will be correct and the user was already not registered then the message returned in json will be 'registered successfuly'
 
 2. If the user was already registered in the particular event then the message returned will be 'already registered'
 3. If somehow a wrong event name was sent then the message would be 'event does not exist'
