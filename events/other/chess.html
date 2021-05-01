@@ -143,7 +143,7 @@
                     </li>
                     <li class="mr-3">
                         <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4"
-                            href="../../team">Website Team</a>
+                            href="../../team">Team</a>
                     </li>
                     <li class="mr-3">
                         <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../contact">Contact</a>
@@ -310,8 +310,8 @@
                                 <input type="email" name="email" id="email"
                                     class="p-2 border border-grey-light round text-black-555 placeholder-gray-400 text-sm h-auto"
                                     placeholder="email address">
-                                <button type="submit"
-                                    class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none text-xs p-3">Submit</button>
+                                <button type="submit" id="emailBtn"
+                  class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none h-auto text-xs p-3">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -422,7 +422,7 @@
         </div>
     </div>
 
-    <modal id="emailModal" style="display: none;">
+    <modal id="emailSuccess" style="display: none;">
         <div class="fixed z-10 inset-0 overflow-y-auto" aria-labelledby="modal-title" role="dialog" aria-modal="true">
             <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
@@ -450,7 +450,7 @@
                         </div>
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                        <button onclick="openClose('emailModal', 'Closing Dialog', 'Exiting...')" type="button"
+                        <button onclick="openClose('emailSuccess', 'Closing Dialog', 'Exiting...')" type="button"
                             class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:ml-3 sm:w-auto sm:text-sm">
                             Close
                         </button>

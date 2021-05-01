@@ -30,24 +30,32 @@ document.getElementById('nav-toggle').onclick = function () {
     document.getElementById("nav-content").classList.toggle("hidden");
 }
 
+var emailBtn = document.getElementById("emailBtn");
 $('#footerForm').submit(function(e) {
+emailBtn.disabled = true
+emailBtn.innerHTML = 'Processing'
   e.preventDefault();
   $.ajax({
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/rcount',
        data: $(this).serialize(),
        statusCode: {
+           429:function (response) { 
+            openClose('emailError', 'Daily Limit Exhausted', 'Hey techie, your daily limit has been exhausted. Please try again after some time');
+            emailBtn.innerHTML = 'Spam Detected';
+           },
            200:function (response) { 
-               
                if(response.message == 'No event registered'){
-                openClose('emailModal', 'Ohh NO !!', 'You are not registered in any event');
+                openClose('emailError', 'Hello Stranger ', 'You are not registered in any event');
                }
                else{
-               openClose('emailModal', 'List sent sucessfully', 'Please check your inbox for further details')
+               openClose('emailSuccess', 'List sent sucessfully', 'Please check your inbox for further details')
                }
+               emailBtn.disabled = false;
+               emailBtn.innerHTML = 'Submit';
        }
     }
-    });
+    }); 
 })
 
 
