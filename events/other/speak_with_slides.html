@@ -306,8 +306,8 @@
                 <input type="email" name="email" id="email"
                   class="p-2 border border-grey-light round text-black-555 placeholder-gray-400 text-sm h-auto"
                   placeholder="email address">
-                <button type="submit"
-                  class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none text-xs p-3">Submit</button>
+                <button type="submit" id="emailBtn"
+                  class="bg-yellow-555 text-black-555 active:bg-yellow-400 rounded shadow hover:shadow-lg outline-none focus:outline-none h-auto text-xs p-3">Submit</button>
               </form>
             </div>
           </div>
@@ -542,6 +542,14 @@
       url: '//i-gnez.herokuapp.com/register',
       data: $(this).serialize(),
       statusCode: {
+        429: function (response) {
+          form.remove();
+          formHeader.style.display = "none";
+          successMsg.innerHTML = 'Dailt Limit Exhausted !';
+          successMsg.classList.remove("text-green-400");
+          successMsg.classList.add("text-red-400");
+          successMsg.style.display = "block";
+        },
         422: function (response) {
           title.innerHTML = 'Invalid data';
           title.classList.add("text-red-500");

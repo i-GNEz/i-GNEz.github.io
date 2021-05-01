@@ -31,6 +31,9 @@ document.getElementById('nav-toggle').onclick = function () {
 }
 
 $('#footerForm').submit(function(e) {
+var emailBtn = document.getElementById("emailBtn");
+emailBtn.disabled = true
+emailBtn.innerHTML = 'Submitting'
   e.preventDefault();
   $.ajax({
        type: 'POST',
@@ -50,6 +53,8 @@ $('#footerForm').submit(function(e) {
        }
     }
     });
+    emailBtn.disable = false
+    emailBtn.innerHTML = 'Submit'
 })
 
 
