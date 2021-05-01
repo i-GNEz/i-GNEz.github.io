@@ -351,8 +351,41 @@
     </div>
   </modal>
 
+
+  <notify id="notify" style="display: none;">
+    <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+    <div class="fixed z-50 inset-0">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center">
+    <div class="max-w-sm rounded-lg overflow-hidden shadow-lg bg-white m-4">
+      <div class="flex flex-col min-h-full">
+        <div class="px-6 py-4 border-b">
+          <div class="text-xl text-center text-black-555">Hello Stanger &#128075;</div>
+        </div>
+        <div class="px-6 py-10 flex-grow">
+          <p class="text-gray-700 text-base">
+          Did you know that you can participate in any of the featured events irrespective of your branch/stream/degree. 
+        </div>
+        <div class="px-5 py-3 border-t bg-gray-100 flex justify-end"> 
+          <button onclick="openCloseNotify()" class="bg-yellow-555  text-black-555 font-medium text-sm py-1 px-5 rounded">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </notify>
+
 </body>
 <script src="js/jquery.min.js" type="text/javascript"></script>
 <script src="js/index.js" type="text/javascript"></script>
-
+<script type="text/javascript">
+var notify = document.getElementById("notify");
+function openCloseNotify() {
+   "none" === notify.style.display ? notify.style.display = "block" : notify.style.display = "none"
+}
+  var alerted = localStorage.getItem('alerted') || '';
+  if (alerted != 'true') {
+    openCloseNotify() ;
+   localStorage.setItem('alerted','true');
+  }
+</script>
 </html>
