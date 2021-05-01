@@ -30,10 +30,10 @@ document.getElementById('nav-toggle').onclick = function () {
     document.getElementById("nav-content").classList.toggle("hidden");
 }
 
-$('#footerForm').submit(function(e) {
 var emailBtn = document.getElementById("emailBtn");
+$('#footerForm').submit(function(e) {
 emailBtn.disabled = true
-emailBtn.innerHTML = 'Submitting'
+emailBtn.innerHTML = 'Processing'
   e.preventDefault();
   $.ajax({
        type: 'POST',
@@ -42,6 +42,7 @@ emailBtn.innerHTML = 'Submitting'
        statusCode: {
            429:function (response) { 
             openClose('emailError', 'Daily Limit Exhausted', 'Hey techie, your daily limit has been exhausted. Please try again after some time');
+            emailBtn.innerHTML = 'Spam Detected';
            },
            200:function (response) { 
                if(response.message == 'No event registered'){
@@ -50,11 +51,11 @@ emailBtn.innerHTML = 'Submitting'
                else{
                openClose('emailSuccess', 'List sent sucessfully', 'Please check your inbox for further details')
                }
+               emailBtn.disabled = false;
+               emailBtn.innerHTML = 'Submit';
        }
     }
-    });
-    emailBtn.disable = false
-    emailBtn.innerHTML = 'Submit'
+    }); 
 })
 
 
