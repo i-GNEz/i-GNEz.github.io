@@ -2,15 +2,15 @@
 <html lang="en">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-45KXV849VV"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-45KXV849VV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-45KXV849VV');
-</script>
+    gtag('config', 'G-45KXV849VV');
+  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -128,10 +128,7 @@
                     href="../me">ME/PE</a></li>
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../ce">CE</a>
                 </li>
-                <li class="mr-3">
-                  <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="../../team">Website
-                    Team</a>
-                </li>
+
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
                     href="../other">Other</a></li>
 
@@ -140,6 +137,10 @@
           </li>
           <li class="mr-3">
             <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../about">About</a>
+          </li>
+          <li class="mr-3">
+            <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="../../team">Website
+              Team</a>
           </li>
           <li class="mr-3">
             <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../contact">Contact</a>
@@ -247,7 +248,7 @@
                 <td class="p-2">Phone number</td>
                 <td class="p-2">1. +91 79090 79402 <br>
                   2. +91 84370 72767 <br>
-                  3. +91 97790 15329
+                  3. +91 97790 15329 <br> 4. +91 95726 47142
                 </td>
               </tr>
 
@@ -377,7 +378,7 @@
             <div class="my-5 text-sm">
               <input min="1000000000" max="9999999999" type="number" name="phone_no" id="phone_no"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
-                placeholder="Mobile Number" required />
+                placeholder="10 digit phone number" required />
             </div>
             <div class="my-5 text-sm">
               <select name="team_count" id="team_count" class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
@@ -385,7 +386,6 @@
                 required>
                 <option value="" disabled selected hidden>Members In Team</option>
 
-                <option value=2>2</option>
                 <option value=3>3</option>
 
               </select>
