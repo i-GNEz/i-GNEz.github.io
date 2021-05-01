@@ -1,3 +1,9 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('serviceWorker.js')
+      .then(reg => console.log('service worker registered', reg))
+      .catch(err => console.log('service worker not registered', err));
+  }
+
 var h = document.documentElement,
     b = document.body,
     st = 'scrollTop',
@@ -42,7 +48,7 @@ $('#footerForm').submit(function (e) {
         statusCode: {
             429: function (response) {
                 openClose('emailError', 'Permitted Limit Exhausted', 'Hey techie, your Permitted limit has been exhausted. Please try again after some time');
-                emailBtn.remove;
+                emailBtn.remove();
             },
             200: function (response) {
                 if (response.message == 'No event registered') {

@@ -538,7 +538,7 @@
       statusCode: {
            429:function (response) { 
             openClose('emailError', 'Limit Exhausted', 'Hey techie, your permitted limit has been exhausted. Please try again after some time');
-            feedbackBtn.remove;
+            feedbackBtn.remove();
            },
            200:function (response) {  
                openClose('emailSuccess', 'Feedback Recieved', 'Thank you for providing your valuable feedback');
@@ -551,13 +551,5 @@
     feedbackWait.style.display = "none";
     feedbackBtn.style.display = "block";
   })
-</script>
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js')
-      .then(reg => console.log('service worker registered', reg))
-      .catch(err => console.log('service worker not registered', err));
-  }
-</script>
-
+</script> 
 </html>
