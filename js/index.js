@@ -42,7 +42,7 @@ $('#footerForm').submit(function (e) {
         statusCode: {
             429: function (response) {
                 openClose('emailError', 'Permitted Limit Exhausted', 'Hey techie, your Permitted limit has been exhausted. Please try again after some time');
-                emailBtn.remove;
+                emailBtn.remove();
             },
             200: function (response) {
                 if (response.message == 'No event registered') {

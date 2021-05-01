@@ -538,7 +538,7 @@
       statusCode: {
            429:function (response) { 
             openClose('emailError', 'Limit Exhausted', 'Hey techie, your permitted limit has been exhausted. Please try again after some time');
-            feedbackBtn.remove;
+            feedbackBtn.remove();
            },
            200:function (response) {  
                openClose('emailSuccess', 'Feedback Recieved', 'Thank you for providing your valuable feedback');
