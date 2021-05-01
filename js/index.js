@@ -8,7 +8,7 @@ var scrollpos = window.scrollY;
 var header = document.getElementById("header");
 var navcontent = document.getElementById("nav-content");
 
-document.addEventListener('scroll', function () { 
+document.addEventListener('scroll', function () {
     scroll = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
     progress.style.setProperty('--scroll', scroll + '%');
     scrollpos = window.scrollY;
@@ -31,41 +31,41 @@ document.getElementById('nav-toggle').onclick = function () {
 }
 
 var emailBtn = document.getElementById("emailBtn");
-$('#footerForm').submit(function(e) {
-emailBtn.disabled = true
-emailBtn.innerHTML = 'Processing'
-  e.preventDefault();
-  $.ajax({
-       type: 'POST',
-       url: 'https://i-gnez.herokuapp.com/rcount',
-       data: $(this).serialize(),
-       statusCode: {
-           429:function (response) { 
-            openClose('emailError', 'Daily Limit Exhausted', 'Hey techie, your daily limit has been exhausted. Please try again after some time');
-            emailBtn.innerHTML = 'Spam Detected';
-           },
-           200:function (response) { 
-               if(response.message == 'No event registered'){
-                openClose('emailError', 'Hello Stranger ', 'You are not registered in any event');
-               }
-               else{
-               openClose('emailSuccess', 'List sent sucessfully', 'Please check your inbox for further details')
-               }
-               emailBtn.disabled = false;
-               emailBtn.innerHTML = 'Submit';
-       }
-    }
-    }); 
+$('#footerForm').submit(function (e) {
+    emailBtn.disabled = true
+    emailBtn.innerHTML = 'Processing'
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: 'https://i-gnez.herokuapp.com/rcount',
+        data: $(this).serialize(),
+        statusCode: {
+            429: function (response) {
+                openClose('emailError', 'Permitted Limit Exhausted', 'Hey techie, your Permitted limit has been exhausted. Please try again after some time');
+                emailBtn.remove;
+            },
+            200: function (response) {
+                if (response.message == 'No event registered') {
+                    openClose('emailError', 'Hello Stranger ', 'You are not registered in any event');
+                } else {
+                    openClose('emailSuccess', 'List sent sucessfully', 'Please check your inbox for further details')
+                }
+                emailBtn.disabled = false;
+                emailBtn.innerHTML = 'Submit';
+            }
+        }
+    });
 })
 
 
-$(document).ready(function() {
-preloaderFadeOutTime = 500;
-function hidePreloader() {
-var preloader = $('.spinner-wrapper');
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
+$(document).ready(function () {
+    preloaderFadeOutTime = 500;
+
+    function hidePreloader() {
+        var preloader = $('.spinner-wrapper');
+        preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
 });
 
 function openClose(e, t, a) {

@@ -537,8 +537,8 @@
       data: $(this).serialize(),
       statusCode: {
            429:function (response) { 
-            openClose('emailError', 'Daily Limit Exhausted', 'Hey techie, your daily limit has been exhausted. Please try again after some time');
-            feedbackBtn.innerHTML = 'Spam Detected';
+            openClose('emailError', 'Limit Exhausted', 'Hey techie, your permitted limit has been exhausted. Please try again after some time');
+            feedbackBtn.remove;
            },
            200:function (response) {  
                openClose('emailSuccess', 'Feedback Recieved', 'Thank you for providing your valuable feedback');
