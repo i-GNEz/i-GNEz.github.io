@@ -36,8 +36,18 @@ $('#footerForm').submit(function(e) {
        type: 'POST',
        url: 'https://i-gnez.herokuapp.com/rcount',
        data: $(this).serialize(),
-       complete: openClose('emailModal', 'List send sucessfully', 'Please check your inbox for further details')
-  });
+       statusCode: {
+           200:function (response) { 
+               
+               if(response.message == 'No event registered'){
+                openClose('emailModal', 'Ohh NO !!', 'You are not registered in any event');
+               }
+               else{
+               openClose('emailModal', 'List sent sucessfully', 'Please check your inbox for further details')
+               }
+       }
+    }
+    });
 })
 
 
