@@ -138,7 +138,8 @@
             <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../about">About</a>
           </li>
           <li class="mr-3">
-            <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="../../team">Team</a>
+            <a class="inline-block hover:text-yellow-555 hover:text-underline py-2 px-4" href="../../team">Website
+              Team</a>
           </li>
           <li class="mr-3">
             <a class="inline-block hover:text-yellow-555 py-2 px-4" href="../../contact">Contact</a>
@@ -152,8 +153,7 @@
     <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-36">
 
       <div class="flex mt-6 md:mt-12 flex-col w-full sticky md:top-36 lg:w-2/5 px-8">
-        <img src="../../images/Inter-disc/bitbreaker.png" alt="event image"
-          class="overflow-hidden rounded-lg border-2 border-gray-555">
+        <img src="../../images/1.png" alt="event image" class="overflow-hidden rounded-lg border-2 border-gray-555">
 
         <button onclick="openModal()"
           class="mx-auto bg-transparent mt-4 md:mt-8 hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
@@ -187,7 +187,7 @@
             <path
               d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 12v-6h-2v8h7v-2h-5z" />
           </svg>
-          2:15 PM - 5:15 PM</p>
+          2:15 PM</p>
 
         <div class="my-2">
           <p class="text-yellow-555 uppercase my-4 ">Rules and Regulations</p>
@@ -233,7 +233,13 @@
           <table class="table-auto md:w-1/2 ">
 
             <tbody>
+              <tr>
+                <td class="p-2">No. of Organizers</td>
+                <td class="p-2">4</td>
+              </tr>
+              <tr>
 
+              </tr>
               <tr>
                 <td class="p-2">Phone number (Event Coordinators)</td>
                 <td class="p-2">1. 7909079402<br> 2. 9572647142<br> 3. 8437072767<br>4. 9779015329
@@ -409,11 +415,10 @@
 
             <input type="hidden" id="event_name" name="event_name" value="bit breaker">
             <input type="hidden" id="team_name" name="team_name" value="">
-            <div class="my-5 text-sm">
-              <input type="checkbox" required>
-              <label class="text-black-555" style="font-size:12px">I agree to <a href="/termsandconditions"
-                  style="color:#338AFF">terms and conditions</a></label>
-            </div>
+<div class="my-5 text-sm">
+              <input type="checkbox" id= "termsandconditions" required>
+              <label class="text-black-555" style="font-size:12px" id="labelterms">I agree to <a href="/termsandconditions" style="color:#338AFF">terms and conditions</a></label>
+              </div>
 
 
             <button type="submit" id="addMember"
@@ -676,6 +681,10 @@
           200: function (response) {
             if (document.getElementById("team_count")) {
               document.getElementById("team_count").remove();
+            }
+            if(document.getElementById("termsandconditions")){
+              document.getElementById("termsandconditions").remove();
+              document.getElementById("labelterms").remove();
             }
             $('#name_').val("");
             $('#team_email').val("");
