@@ -160,13 +160,7 @@
           Register
         </button>
 
-        <a href="https://www.google.com/calendar/render?action=TEMPLATE&sf=true&output=xml&text=Some%20Event&location=GNE%20,%20Ludhiana&details=Details%20of%20the%20event&dates=20210505T040000Z/20210505T060000Z"
-          class="inline-flex mx-auto bg-transparent mt-4 md:mt-8 text-yellow-555 hover:text-white py-2 px-4">
-          <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-            <path
-              d="M24 2v22h-24v-22h3v1c0 1.103.897 2 2 2s2-.897 2-2v-1h10v1c0 1.103.897 2 2 2s2-.897 2-2v-1h3zm-2 6h-20v14h20v-14zm-2-7c0-.552-.447-1-1-1s-1 .448-1 1v2c0 .552.447 1 1 1s1-.448 1-1v-2zm-14 2c0 .552-.447 1-1 1s-1-.448-1-1v-2c0-.552.447-1 1-1s1 .448 1 1v2zm6.687 13.482c0-.802-.418-1.429-1.109-1.695.528-.264.836-.807.836-1.503 0-1.346-1.312-2.149-2.581-2.149-1.477 0-2.591.925-2.659 2.763h1.645c-.014-.761.271-1.315 1.025-1.315.449 0 .933.272.933.869 0 .754-.816.862-1.567.797v1.28c1.067 0 1.704.067 1.704.985 0 .724-.548 1.048-1.091 1.048-.822 0-1.159-.614-1.188-1.452h-1.634c-.032 1.892 1.114 2.89 2.842 2.89 1.543 0 2.844-.943 2.844-2.518zm4.313 2.518v-7.718h-1.392c-.173 1.154-.995 1.491-2.171 1.459v1.346h1.852v4.913h1.711z" />
-          </svg>
-        </a>
+
       </div>
 
       <div class="flex flex-col w-full lg:w-3/5 p-8">
@@ -391,30 +385,30 @@
             </svg>
           </div>
         </div>
-        <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555">
+                <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555 text-sm" >
           <p id="successMsg" style="display: none;" class="text-green-400 text-2xl md:3xl p-2 md:m-4">Registration
             successful</p>
           <form id="registrationForm" action="" method="POST">
             <p id="formTitle" class="text-black-555">Fill up this form</p>
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input type="text" maxlength="100" name="name" autofocus id="name"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="Name of the Participant" required />
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input type="text" name="email" id="team_email"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="Email of the Participant" required />
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input min="1000000000" max="9999999999" type="number" name="phone_no" id="phone_no"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="10 digit phone number" required />
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <select name="gender" id="gender" class="tracking-wide py-2 px-4 mb-3 placeholder-gray-400 text-black-555 leading-relaxed appearance-none block
        w-full bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
                 required>
@@ -425,19 +419,19 @@
               </select>
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input type="text" maxlength="100" name="college" id="college"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="Name of the college" required />
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input type="text" maxlength="100" name="college_city" id="college_city"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="College City" required />
             </div>
 
-            <div class="my-5 text-sm">
+            <div class="my-3 text-sm">
               <input type="text" maxlength="100" name="college_roll_no" id="college_roll_no"
                 class="rounded-sm py-2 px-3 focus:outline-none placeholder-gray-400 text-black-555 bg-gray-100 w-full"
                 placeholder="College Roll No" required />
@@ -445,7 +439,7 @@
 
             <input type="hidden" id="event_name" name="event_name" value="technical paper presentation">
             <input type="hidden" id="team_name" name="team_name" value="">
-<div class="my-5 text-sm">
+<div class="my-3 text-sm">
               <input type="checkbox" id= "termsandconditions" required>
               <label class="text-black-555" style="font-size:12px">I agree to <a href="/termsandconditions" style="color:#338AFF">terms and conditions</a></label>
               </div>
