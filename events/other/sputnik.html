@@ -131,8 +131,9 @@
                 <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
                     href="../other">INTERDISCIPLINARY</a></li>
 
-                    <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap" href="../webinar">WEBINAR</a>
-                    </li>
+                <li><a class="hover:text-yellow-555 bg-black-555 py-2 px-4 block whitespace-no-wrap"
+                    href="../webinar">WEBINAR</a>
+                </li>
               </ul>
             </div>
           </li>
@@ -154,7 +155,8 @@
     <div class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-36">
 
       <div class="flex mt-6 md:mt-12 flex-col w-full sticky md:top-36 lg:w-2/5 px-8">
-        <img src="../../images/1.png" alt="event image" class="overflow-hidden rounded-lg border-2 border-gray-555">
+        <img src="../../images/Inter-disc/Sputnik.png" alt="event image"
+          class="overflow-hidden rounded-lg border-2 border-gray-555">
 
         <button onclick="openModal()"
           class="mx-auto bg-transparent mt-4 md:mt-8 hover:bg-yellow-555 text-yellow-555 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-555 hover:border-transparent">
@@ -345,7 +347,7 @@
             </svg>
           </div>
         </div>
-                <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555 text-sm" >
+        <div class="flex w-full pb-6 justify-center items-center rounded text-center text-gray-555 text-sm">
           <p id="successMsg" style="display: none;" class="text-green-400 text-2xl md:3xl p-2 md:m-4">Registration
             successful</p>
           <form id="registrationForm" action="" method="POST">
@@ -399,10 +401,11 @@
 
             <input type="hidden" id="event_name" name="event_name" value="sputnik">
             <input type="hidden" id="team_name" name="team_name" value="">
-<div class="my-3 text-sm">
-              <input type="checkbox" id= "termsandconditions" required>
-              <label class="text-black-555" style="font-size:12px">I agree to <a href="/termsandconditions" style="color:#338AFF">terms and conditions</a></label>
-              </div>
+            <div class="my-3 text-sm">
+              <input type="checkbox" id="termsandconditions" required>
+              <label class="text-black-555" style="font-size:12px">I agree to <a href="/termsandconditions"
+                  style="color:#338AFF">terms and conditions</a></label>
+            </div>
 
             <button type="submit" id="submitBtn"
               class="block text-center text-black-555 bg-yellow-555 p-3 duration-300 rounded-sm hover:bg-yellow-400 w-full">Register</button>
