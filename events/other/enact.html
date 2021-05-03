@@ -390,6 +390,7 @@
                     <p id="successMsg" style="display: none;" class="text-yellow-555 text-2xl md:3xl p-2 md:m-4">
                         Registration
                         successful</p>
+                    <p id= "closemsg" style="display: none;color:red" class="text-yellow-555 text-2xl md:3xl p-2 md:m-4">Registration Closed</p>>
                     <form id="registrationForm" action="" method="POST">
                         <p id="formTitle" class="text-black-555">Team Leader</p>
                         <div class="my-3 text-sm">
@@ -586,7 +587,8 @@
             if (event.target == modal) modalClose();
         }
     }
-
+    
+    
     var totalMembers = 3 // change only total members for every event 
     var member = 2
     var counter = false;
@@ -598,71 +600,13 @@
     var title = document.getElementById("formTitle");
     var form = document.getElementById("registrationForm");
     var successMsg = document.getElementById("successMsg");
+    var closemsg = document.getElementById("closemsg");
     $(document).ready(function () {
-        $('#registrationForm').submit(function (e) {
-
-
-            submitBtn.style.display = "none";
-            waitingBtn.style.display = "block";
-            if (member == 2) {
-                team_name_value = document.getElementById("team_email").value;
-                count_members = document.getElementById("team_count").value;
-            }
-            document.getElementById("team_name").value = team_name_value;
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: 'https://i-gnez.herokuapp.com/register',
-                data: $(this).find("[name!=team_count]").serialize(),
-                statusCode: {
-                    422: function (response) {
-                        title.innerHTML = 'Invalid data';
-                        title.classList.add("text-red-500");
-                        submitBtn.style.display = "block";
-                        waitingBtn.style.display = "none";
-                    },
-                    409: function (response) {
-                        $('#name_').val("");
-                        $('#team_email').val("");
-                        $('#gender').val("");
-                        $('#college_roll_no').val("");
-                        title.innerHTML = 'User already registered';
-                        title.classList.add("text-red-500");
-                        submitBtn.style.display = "block";
-                        waitingBtn.style.display = "none";
-                    },
-                    400: function (response) {
-                        title.innerHTML = "Something went wrong";
-                        title.classList.add("text-red-500");
-                        submitBtn.style.display = "block";
-                        waitingBtn.style.display = "none";
-                    },
-                    200: function (response) {
-                        if (document.getElementById("team_count")) {
-                            document.getElementById("team_count").remove();
-                        }
-                        if(document.getElementById("termsandconditions")){
-                            document.getElementById("termsandconditions").remove();
-                             document.getElementById("labelterms").remove();
-                         }
-                        $('#name_').val("");
-                        $('#team_email').val("");
-                        $('#gender').val("");
-                        $('#college_roll_no').val("");
-                        if (member <= count_members) {
-                            document.getElementById("addMember").innerHTML = "Register Member " + member
-                            document.getElementById("formTitle").innerHTML = "Member " + member
-                            submitBtn.style.display = "block";
-                            waitingBtn.style.display = "none";
-                            member++;
-                        } else {
-                            form.remove();
-                            formHeader.style.display = "none";
-                            successMsg.style.display = "block";
-                        }
-                    }
-                },
-            })
+        $('#registrationForm').ready(function (e) {
+            form.remove();
+            
+            formHeader.style.display = "none";
+            closemsg.style.display = "block";
         })
     });
 </script>
